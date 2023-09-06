@@ -15,7 +15,7 @@ const updateTime = () => {
 
 
   function updateDayOfWeek() {
-    const dayOfWeekElement = document.querySelector('[data-testid="currentDayOfWeek"]');
+    const dayOfWeekElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const currentDayIndex = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
     const currentDay = daysOfWeek[currentDayIndex];
