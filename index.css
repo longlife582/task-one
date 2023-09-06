@@ -63,3 +63,7 @@ body{
    top: -70px;
    /* color: blue; */
 }
+
+.p{
+    cursor: pointer;
+}
