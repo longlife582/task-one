@@ -4,41 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>HNG</title>
+    <title>Promise Oviawele</title>
 </head>
 <body>
+    <header> <h1 data-testid="slackUserName">Promise Oviawele</h1>
+        <img src="./WhatsApp Image 2023-04-27 at 7.13.06 AM.jpeg" alt="Promise Oviawele" data-testid="slackDisplayImage">
+    </header>
+       
+    <main>
+        <section>
+            <h2>Current Day of the Week</h2>
+            <p data-testid="currentDayOfTheWeek">Monday</p>
+        </section>
+        
+        <section>
+            <h2>Current UTC Time (in milliseconds)</h2>
+            <p data-testid="currentUTCTime">0</p>
+        </section>
+        
+        <section>
+            <h2>Track</h2>
+            <p data-testid="myTrack">Frontend</p>
+        </section>
+        
+        <section>
+            <h2>Github URL</h2>
+            <a href="https://github.com/longlife582/task-one" data-testid="githubURL">https://github.com/longlife582/task-one</a>
+        </section>
+    </main>
 
-    <div class="hersection">
-        <div class="hero-container">
-            <div class="left">
-                <h4> My slack name</h4>
-                <h1 data-testid="slackUserName">Promise Oviawele</h1>
+    <script>
+        
+        function updateDayOfTheWeek() {
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const currentDate = new Date();
+            const currentDayOfWeek = daysOfWeek[currentDate.getUTCDay()];
+            const dayOfTheWeekElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+            dayOfTheWeekElement.textContent = currentDayOfWeek;
+        }
 
-                <div class="task">
-                    <h1>my track</h1>
-                    <p data-testid="myTrack">frontend</p>
-                </div>
+        
+        function updateUTCTime() {
+            const currentUTCTime = Date.now();
+            const UTCTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
+            UTCTimeElement.textContent = currentUTCTime;
+        }
 
-              <div class="date">
-                <div data-testid="currentDayOfTheWeek">Loading...</div>
-                <div data-testid="currentUTCTime">Loading...</div>
-              </div>
+       
+        updateDayOfTheWeek();
+        updateUTCTime();
 
-             <a href="https://github.com/longlife582/task-one"> <p class="p" data-testid="githubURL">https://github.com/longlife582/task-one</p></a>
-
-
-
-
-            </div>
-            <div class="right">
-                <img data-testid="slackDisplayImage" src="./WhatsApp Image 2023-04-27 at 7.13.06 AM.jpeg" alt="Promise Oviawele">
-
-            </div>
-        </div>
-    </div>
-    
-
-<script src="index.js"></script>
-
+     
+        setInterval(updateDayOfTheWeek, 1000);
+        setInterval(updateUTCTime, 1000);
+    </script>
+</body>
 </body>
 </html>
